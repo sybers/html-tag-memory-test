@@ -1,8 +1,7 @@
-# React + Vite
+# HTML Tag Memory Test
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> How many HTML tags can you remember?
 
-Currently, two official plugins are available:
+[Click here](https://html-tag-memory-test.netlify.app) to play the game!
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built using Vite, React and Floating UI. Deployed on Netlify.
