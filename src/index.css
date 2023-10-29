@@ -1,0 +1,175 @@
+/* CSS Reset */
+
+@import "reset-css";
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Root styles and CSS variables */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --color-global-bg: #ffffff;
+  --color-text: #213547;
+
+  --color-link: #646cff;
+  --color-link-hover: #747bff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    background-color: #242424;
+
+    --color-global-bg: #242424;
+    --color-text: rgba(255, 255, 255, 0.87);
+
+    --color-link: #646cff;
+    --color-link-hover: #535bf2;
+  }
+}
+
+/* Global styles */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-global-bg);
+  color: var(--color-text);
+}
+
+a {
+  font-weight: 500;
+  color: var(--color-link);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+b {
+  font-weight: bold;
+}
+
+/* Apps styles */
+
+#root {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.app-header {
+  text-align: left;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header p {
+  margin: 0;
+  margin-top: 16px;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+.app-form {
+  margin: 48px 0 24px;
+}
+
+.restart-guesses {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.tag-input {
+  --color-input-border: #a8a8a8;
+
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1.6rem;
+  font-family: monospace;
+  border: 2px solid var(--color-input-border);
+  border-radius: 6px;
+  outline-color: var(--color-link);
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .tag-input {
+    --color-input-border: #4e4e4e;
+  }
+}
+
+.tag-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.tag {
+  --color-tag-bg: #d4d4d4;
+  --color-tag-bg-hover: #dfdfdf;
+  --color-tag-border: #a8a8a8;
+
+  position: relative;
+  padding: 8px 8px;
+  border-radius: 4px;
+  background-color: var(--color-tag-bg);
+  border: 2px solid var(--color-tag-border);
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: default;
+}
+
+.tag:hover {
+  background-color: var(--color-tag-bg-hover);
+}
+
+.tooltip {
+  background: #222222;
+  color: white;
+  font-weight: normal;
+  padding: 16px;
+  border-radius: 4px;
+  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  max-width: 320px;
+  text-align: left;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 720px) {
+  .tag-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  .tag {
+    --color-tag-bg: #333333;
+    --color-tag-bg-hover: #3d3d3d;
+    --color-tag-border: #4e4e4e;
+  }
+}
