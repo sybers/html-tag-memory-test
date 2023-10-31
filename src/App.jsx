@@ -20,7 +20,7 @@ function animateWiggle(element) {
     {
       duration: 125,
       iterations: 2,
-    }
+    },
   );
 }
 
