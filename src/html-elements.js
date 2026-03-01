@@ -447,6 +447,25 @@ export const HTMLElementDescriptions = {
     description:
       "The top-level element in MathML. Every valid MathML instance must be wrapped in it. In addition, you must not nest a second <math> element in another, but you can have an arbitrary number of other child elements in it.",
   },
+  marquee: {
+    description:
+      "Used to insert a scrolling area of text. You can control what happens when the text reaches the edges of its content area using its attributes.",
+  },
+  tt: {
+    description:
+      "Creates inline text which is presented using the user agent's default monospace font face. This element was created for the purpose of rendering text as it would be displayed on a fixed-width display such as a teletype, text-only screen, or line printer.",
+  },
+  blink: {
+    description:
+      "An obsolete HTML feature no longer supported by web browsers. It was used to make text content blink on and off (flash) continually.",
+  },
+  frame: {
+    description:
+      "Defines a particular area in which another HTML document can be displayed. A frame should be used within a <frameset>.",
+  },
+  frameset: {
+    description: "Used to contain <frame> elements.",
+  },
 };
 
 export const HTMLElements = Object.keys(HTMLElementDescriptions);
