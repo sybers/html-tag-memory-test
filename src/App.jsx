@@ -6,6 +6,7 @@ import "./App.css";
 import useLocalStorage from "./hooks/useLocalStorage";
 
 import AppHeader from "./components/AppHeader";
+import ProgressBar from "./components/ProgressBar";
 import TagInput from "./components/TagInput";
 import TagList from "./components/TagList";
 
@@ -71,6 +72,7 @@ function App() {
     <div>
       <AppHeader />
       <form className="app-form" onSubmit={handleSubmit}>
+        <ProgressBar current={guessedTags.length} total={HTMLElements.length} />
         <TagInput ref={inputRef} autoFocus />
       </form>
       <div className="share-score-cta">
@@ -79,6 +81,10 @@ function App() {
             🎉 Congrats, you guessed all existing HTML tags! 🎉
             <br />
             {"You're a true master of HTML!"}
+            <br />
+            <a className="restart-guesses" onClick={resetGuesses}>
+              restart
+            </a>
           </p>
         ) : (
           <p className="share-score-cta__counter">
