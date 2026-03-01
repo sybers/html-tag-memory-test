@@ -104,6 +104,31 @@ b {
   cursor: pointer;
 }
 
+.share-score-cta {
+  margin-top: 24px;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--color-tag-border, #a8a8a8);
+  background-color: var(--color-global-bg);
+  color: var(--color-text);
+}
+
+.share-score-cta p {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.share-score-cta__counter {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+}
+
+.share-score-link {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 .tag-input {
   --color-input-border: #a8a8a8;
 
@@ -171,5 +196,9 @@ b {
     --color-tag-bg: #333333;
     --color-tag-bg-hover: #3d3d3d;
     --color-tag-border: #4e4e4e;
+  }
+
+  .share-score-cta {
+    border-color: #4e4e4e;
   }
 }

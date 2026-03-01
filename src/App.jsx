@@ -27,6 +27,7 @@ function animateWiggle(element) {
 function App() {
   const inputRef = useRef(null);
   const [guessedTags, setGuessedTags] = useLocalStorage("html-guess-game", []);
+
   const remainingTagsToGuessCount = HTMLElements.length - guessedTags.length;
 
   const handleSubmit = (event) => {
@@ -53,29 +54,70 @@ function App() {
     }
   };
 
+  const shareText = [
+    `I could remember ${guessedTags.length} HTML tags!`,
+    "Do you think you can beat me?",
+    "Try the HTML tag memory game 👇",
+    typeof window !== "undefined" ? window.location.origin : "",
+  ]
+    .join("\n")
+    .slice(0, 300);
+
+  const blueskyShareUrl = `https://bsky.app/intent/compose?text=${encodeURIComponent(
+    shareText,
+  )}`;
+
   return (
     <div>
       <AppHeader />
       <form className="app-form" onSubmit={handleSubmit}>
         <TagInput ref={inputRef} autoFocus />
       </form>
-      <p>
+      <div className="share-score-cta">
         {remainingTagsToGuessCount === 0 ? (
-          <p>
+          <p className="share-score-cta__counter">
             🎉 Congrats, you guessed all existing HTML tags! 🎉
             <br />
             {"You're a true master of HTML!"}
           </p>
         ) : (
-          <>
+          <p className="share-score-cta__counter">
             <b>{guessedTags.length}</b> guessed,{" "}
             <b>{remainingTagsToGuessCount}</b> to go.{" "}
             <a className="restart-guesses" onClick={resetGuesses}>
               restart
             </a>
-          </>
+          </p>
         )}
-      </p>
+        <p className="share-score-cta__phrase">
+          {remainingTagsToGuessCount === 0 ? (
+            <>
+              <a
+                href={blueskyShareUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="share-score-link"
+              >
+                Share on Bluesky
+              </a>{" "}
+              to challenge your friends!
+            </>
+          ) : (
+            <>
+              {guessedTags.length >= 50 && "Stuck? "}
+              <a
+                href={blueskyShareUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="share-score-link"
+              >
+                Share on Bluesky
+              </a>{" "}
+              to challenge your friends!
+            </>
+          )}
+        </p>
+      </div>
       <div style={{ marginTop: "32px" }}>
         {guessedTags.length === 0 && <p>Start by typing an HTML tag name...</p>}
         {guessedTags.length >= 0 && <TagList tags={guessedTags} />}
