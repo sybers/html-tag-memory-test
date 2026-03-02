@@ -5,7 +5,7 @@ export default function AppHeader() {
     <div className="app-header">
       <h1>
         HTML Tags Memory Test{" "}
-        <a href="//github.com/sybers">
+        <a href="//github.com/sybers/html-tag-memory-test">
           <GithubIcon />
         </a>
       </h1>
