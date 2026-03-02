@@ -1,7 +1,22 @@
+<div align="center">
+
+```html
+<marquee />
+```
+
 # HTML Tag Memory Test
 
 > How many HTML tags can you remember?
 
-[Click here](https://html-tag-memory-test.netlify.app) to play the game!
+[▶ Play the game](https://html-tag-memory-test.netlify.app)
 
-Built using Vite, React and Floating UI. Deployed on Netlify.
+**Built with** React · Vite · Floating UI · Deployed on Netlify
+
+</div>
+
+## Getting started
+
+```bash
+pnpm install
+pnpm dev
+```
